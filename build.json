@@ -1,4 +1,10 @@
 {
+    "additional_files": [
+        "js/ticktackk/hcaptchaintegration/"
+    ],
+    "minify": [
+        "js/ticktackk/hcaptchaintegration/captcha.js"
+    ],
     "exec": [
         "composer install --working-dir=_build/upload/src/addons/{addon_id}/ --no-dev --optimize-autoloader"
     ],

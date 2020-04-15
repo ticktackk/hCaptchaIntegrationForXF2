@@ -1,0 +1,9 @@
+{
+    "template": "option_template_captcha",
+    "description": "Add hCaptcha in available captcha list",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:captcha_after_recaptcha]-->",
+    "replace": "$0\n\n<xf:option value=\"TickTackk\\hCaptchaIntegration:hCaptcha\" data-hide=\"true\">\n\t<xf:label>{{ phrase('tckHCaptchaIntegration_use_hcaptcha') }}</xf:label>\n\t<xf:hint>{{ phrase('tckHCaptchaIntegration_hcaptcha_config_hint') }}</xf:hint>\n\t<xf:dependent>\n\t\t<div>{{ phrase('site_key:') }}</div>\n\t\t<xf:textbox name=\"{$extraKeysInput}[tckHCaptchaSiteKey]\" value=\"{$xf.options.extraCaptchaKeys.tckHCaptchaSiteKey}\" />\n\t</xf:dependent>\n\t<xf:dependent>\n\t\t<div>{{ phrase('secret_key:') }}</div>\n\t\t<xf:textbox name=\"{$extraKeysInput}[tckHCaptchaSecretKey]\" value=\"{$xf.options.extraCaptchaKeys.tckHCaptchaSecretKey}\" />\n\t</xf:dependent>\n\t<xf:dependent>\n\t\t<xf:checkbox>\n\t\t\t<xf:option name=\"{$extraKeysInput}[tckHCaptchaInvisible]\" selected=\"{$xf.options.extraCaptchaKeys.tckHCaptchaInvisible}\">{{ phrase('tckHCaptchaIntegration_use_invisible_hcaptcha') }}</xf:option>\n\t\t</xf:checkbox>\n\t</xf:dependent>\n</xf:option>"
+}
