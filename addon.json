@@ -1,0 +1,25 @@
+{
+    "legacy_addon_id": "",
+    "title": "hCaptcha Integration",
+    "description": "This add-on adds allows using hCaptcha throughout XenForo.",
+    "version_id": 1000011,
+    "version_string": "1.0.0 Alpha 1",
+    "dev": "TickTackk",
+    "dev_url": "https://xenforo.com/community/members/ticktackk.90375/",
+    "faq_url": "",
+    "support_url": "https://github.com/ticktackk/hCaptchaIntegrationForXF2/issues",
+    "extra_urls": {
+        "Twitter": "https://twitter.com/t1cktackk"
+    },
+    "require": {
+        "XF": [
+            2010070,
+            "XenForo 2.1.0+"
+        ],
+        "php": [
+            "7.3.0",
+            "PHP 7.3.0+"
+        ]
+    },
+    "icon": "fa-vacuum-robot"
+}
