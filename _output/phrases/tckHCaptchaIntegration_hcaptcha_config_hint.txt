@@ -1,0 +1,1 @@
+You would need to get your own API keys from <a href="https://dashboard.hcaptcha.com/" target="_blank">hCaptcha dashboard</a> and enter them below.
