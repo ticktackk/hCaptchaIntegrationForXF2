@@ -153,6 +153,17 @@ class hCaptcha extends AbstractCaptcha
                 return $response['success'];
             }
 
+            $errorCodes = $response['error-codes'] ?? [];
+            if (!\is_array($errorCodes))
+            {
+                $errorCodes = [];
+            }
+
+            if (!\count($errorCodes))
+            {
+                \XF::logError('hCaptcha validation error codes: ' . \implode($errorCodes));
+            }
+
             return false;
         }
         catch(GuzzleHttpRequestException $e)
