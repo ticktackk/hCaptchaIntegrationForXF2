@@ -137,6 +137,7 @@ class hCaptcha extends AbstractCaptcha
 
             $response = $this->httpClient()->post('https://hcaptcha.com/siteverify', [
                 'form_params' => [
+                    'sitekey' => $siteKey,
                     'secret' => $secretKey,
                     'response' => $captchaResponse,
                     'remoteip' => $request->getIp()
@@ -147,9 +148,20 @@ class hCaptcha extends AbstractCaptcha
             ])->getBody()->getContents();
             $response = \GuzzleHttp\json_decode($response, true);
 
-            if (isset($response['success']) && isset($response['hostname']) && $response['hostname'] == $request->getHost())
+            if (isset($response['success']))
             {
                 return $response['success'];
+            }
+
+            $errorCodes = $response['error-codes'] ?? [];
+            if (!\is_array($errorCodes))
+            {
+                $errorCodes = [];
+            }
+
+            if (!\count($errorCodes))
+            {
+                \XF::logError('hCaptcha validation error codes: ' . \implode($errorCodes));
             }
 
             return false;
