@@ -137,6 +137,7 @@ class hCaptcha extends AbstractCaptcha
 
             $response = $this->httpClient()->post('https://hcaptcha.com/siteverify', [
                 'form_params' => [
+                    'sitekey' => $siteKey,
                     'secret' => $secretKey,
                     'response' => $captchaResponse,
                     'remoteip' => $request->getIp()
