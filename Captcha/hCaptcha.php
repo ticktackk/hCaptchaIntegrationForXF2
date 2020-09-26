@@ -148,7 +148,7 @@ class hCaptcha extends AbstractCaptcha
             ])->getBody()->getContents();
             $response = \GuzzleHttp\json_decode($response, true);
 
-            if (isset($response['success']) && isset($response['hostname']) && $response['hostname'] == $request->getHost())
+            if (isset($response['success']))
             {
                 return $response['success'];
             }
